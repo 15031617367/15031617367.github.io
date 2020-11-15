@@ -1,0 +1,439 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no", user-scalable=no">
+  <title>react项目初始化龚箭</title>
+  <link rel="shortcut icon" href="">
+  
+    
+    
+      <link rel="stylesheet" href="/css/bootstrap.min.css">
+    
+      <link rel="stylesheet" href="/css/font-awesome.min.css">
+    
+      <link rel="stylesheet" href="/css/atom-one-dark.css">
+    
+      <link rel="stylesheet" href="/css/jquery.fancybox.css">
+    
+      <link rel="stylesheet" href="/css/nprogress.min.css">
+    
+      <link rel="stylesheet" href="/css/valine.css">
+    
+      <link rel="stylesheet" href="/css/life.css">
+    
+  
+
+  
+
+  <!-- jQuery first, then Tether, then Bootstrap JS. -->
+  
+  
+  
+    <script src="/js/jquery-2.2.4.min.js"></script>
+  
+    <script src="https://cdn1.lncld.net/static/js/3.1.0/av-min.js"></script>
+  
+    <script src="/js/jquery.pjax.js"></script>
+  
+    <script src="/js/nprogress.min.js"></script>
+  
+    <script src="/js/tether.min.js"></script>
+  
+    <script src="/js/bootstrap.min.js"></script>
+  
+    <script src="/js/highlight.min.js"></script>
+  
+    <script src="/js/highlightjs-line-numbers.min.js"></script>
+  
+    <script src="/js/jquery.fancybox.js"></script>
+  
+    <script src="/js/jquery.qrcode.min.js"></script>
+  
+    <script src="/js/Valine.min.js"></script>
+  
+  
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+<script>AV.init({appId:'',appKey:''});</script>
+<script type="text/javascript">
+      var config = {
+            ClasS: 'Counter',
+            el:'.views',
+            elP: '.views-post'
+      }
+</script>
+<div class="container">
+    <div class="row blog-box-shadow">
+        <!--博客主栏开始-->
+        <div class="col-xl-9 col-lg-12 blog-main" id="pjax-box">
+            <header class="blog-header">
+                <a href="http://yoursite.com" class="blog-header-mobile-title">龚箭</a>
+                <a href="javascript:;" class="blog-header-navbar-btn"><i class="fa fa-bars"></i></a>
+                <nav class="blog-header-navbar blog-header-fixed">
+                    <ul class="blog-navbar-links">
+                        
+                          <li class="blog-nav-item"><a href="/" class="transition">首页</a></li>
+                        
+                          <li class="blog-nav-item"><a href="/about/" class="transition">关于</a></li>
+                        
+                        <div class="blog-navbar-right">
+                            <form action="">
+                                <div class="input-group">
+                                    <input type="text" class="blog-header-search" placeholder="search...">
+                                    <buttn type="submit" class="blog-header-search-btn"><i class="fa fa-search"></i></buttn>
+                                </div>
+                            </form>
+                        </div>
+                    </ul>
+                </nav>
+            </header>
+                
+<header class="blog-post-page-title">
+    <h4>react项目初始化</h4>
+    <time datetime="2020-07-22T13:34:35.000Z"><i class="fa fa-clock-o"></i>2020-07-22</time>
+    
+    
+    <span>
+        <i class="fa fa-eye"></i>
+        <span id="/2020/07/22/react/react%E9%A1%B9%E7%9B%AE%E5%88%9D%E5%A7%8B%E5%8C%96/" class="views views-post"  title="react项目初始化"></span>
+    </span>
+    
+    
+    
+	
+    
+</header>
+<div class="blog-main-post blog-post-page-box">
+    <article class="blog-post-block blog-post-page-content">
+        <section>
+            
+                <h1 id="react项目初始化"><a href="#react项目初始化" class="headerlink" title="react项目初始化"></a>react项目初始化</h1><ol>
+<li>优化import</li>
+<li>使用styled-components</li>
+<li>统一css</li>
+<li>React-router</li>
+<li>使用SVG图片</li>
+<li>统一读取svg目录的文件</li>
+</ol>
+<h2 id="1-优化import"><a href="#1-优化import" class="headerlink" title="1.优化import"></a>1.优化import</h2><p>在tscinfig.json中添加,可以吧src当做根目录路直接import “app.tsx”</p>
+<pre><code class="json">    &quot;compilerOptions&quot;: {
+        +  &quot;baseUrl&quot;: &quot;src&quot;,
+    }
+</code></pre>
+<h2 id="2-使用styled-components"><a href="#2-使用styled-components" class="headerlink" title="2. 使用styled-components"></a>2. 使用styled-components</h2><p>使用styled-components进行css</p>
+<p>安装</p>
+<pre><code class="javascript">    yarn add styled-components
+    yarn add --dev @types/styled-components
+</code></pre>
+<p>使用</p>
+<pre><code class="javascript">    import styled from &#39;styled-components&#39;
+    const Button = styled.button`
+      color:red
+    `
+    const App = ()=&gt;{
+        return (
+            &lt;Button&gt;&lt;/Button&gt;
+        )
+    }
+</code></pre>
+<h2 id="3-统一css"><a href="#3-统一css" class="headerlink" title="3. 统一css"></a>3. 统一css</h2><p>在scss或者css文件中添加</p>
+<pre><code class="javascript">    @ihelpermport-normalize;
+</code></pre>
+<h2 id="4-React-router"><a href="#4-React-router" class="headerlink" title="4. React-router"></a>4. React-router</h2><p><a href="https://reactrouter.com/web/guides/quick-start" target="_blank" rel="noopener">参考文档</a></p>
+<p>设置404页面</p>
+<pre><code class="javascript">    &lt;Switch&gt;
+        &lt;Route path=&quot;*&quot;&gt;
+            404,页面不存在
+        &lt;/Route&gt;
+    &lt;/Switch&gt;
+</code></pre>
+<p>设置默认显示页</p>
+<pre><code class="javascript">    &lt;Switch&gt;
+        &lt;Redirect exact from=&quot;/&quot; to=&quot;/money&quot;&gt;
+    &lt;/Switch&gt;
+</code></pre>
+<h2 id="5-跨平台CSS中文字体解决方案"><a href="#5-跨平台CSS中文字体解决方案" class="headerlink" title="5. 跨平台CSS中文字体解决方案"></a>5. 跨平台CSS中文字体解决方案</h2><p><a href="https://zenozeng.github.io/fonts.css/" target="_blank" rel="noopener">中文字体 css github</a></p>
+<h2 id="6-使用SVG图片"><a href="#6-使用SVG图片" class="headerlink" title="6. 使用SVG图片"></a>6. 使用SVG图片</h2><p>如果在项目中使用SVG图片,需要借助svg-sprite-loader进行编译<br>配置方法如下</p>
+<ol>
+<li>显示react的配置文件</li>
+</ol>
+<pre><code class="javascript">    yarn eject
+</code></pre>
+<ol>
+<li>安装svg-sprite-loader</li>
+</ol>
+<pre><code class="javascript">    yarn add --dev svg-sprite-loader
+    yarn add --dev svgo-loader
+</code></pre>
+<ol>
+<li>配置config/webpack.config.js</li>
+</ol>
+<pre><code class="javascript">    oneOf:[
+        + {
+        +  test: /\.svg$/,
+        +  use: [
+        +    { loader: &#39;svg-sprite-loader&#39;, options: {} },
+        +    {loader:&#39;svgo-loader&#39;,options:{}}
+        +  ]
+        + }
+    ]
+</code></pre>
+<p>svgo-loader:SVG优化<br>svg-transform-loader: 对SVG图片进行优化(不需要)</p>
+<p>4.配置完成后需要重新运行项目</p>
+<pre><code class="javascript">    yarn start
+</code></pre>
+<ol>
+<li>引入SVG图片<pre><code class="javascript"> require(&quot;../icons/test.svg&quot;)
+ &lt;svg fill=&quot;red&quot; className=&quot;className&quot;&gt;
+     &lt;use xlinkHref=&quot;#test(文件名)&quot;/&gt;
+ &lt;svg&gt;
+</code></pre>
+==如果使用import xx from “”引入会触发TreeShaking机制,react会自动删除==</li>
+</ol>
+<h2 id="6-统一读取svg目录的文件"><a href="#6-统一读取svg目录的文件" class="headerlink" title="6. 统一读取svg目录的文件"></a>6. 统一读取svg目录的文件</h2><pre><code class="javascript">    let importAll = (requireContext: __WebpackModuleApi.RequireContext) =&gt; requireContext.keys().forEach(requireContext);
+    try {importAll(require.context(&#39;icons&#39;, true, /\.svg$/));} catch (error) {console.log(error);}
+</code></pre>
+<p>安装</p>
+<pre><code class="javascript">    yarn add --dev @types/webpack-env
+</code></pre>
+<p><a href="https://stackoverflow.com/questions/40568176/webpack-typescript-module-hot-does-not-exist" target="_blank" rel="noopener">参考文档</a></p>
+
+            
+        </section>
+        <footer class="blog-post-page-tags">
+        
+			
+				
+			<a href="/tags/react/" rel="tag" data-toggle="tooltip" data-placement="top" title="Linux">react</a>
+				
+			
+		
+        </footer>
+    </article>
+    <article class="blog-post-page-readmore">
+    	
+    	
+		
+			<a href="/2020/10/24/node/TypeScript+node%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="blog-post-page-readmore-prev" data-toggle="tooltip" data-placement="top" title="TypeScript+node搭建静态服务器">上一篇</a>
+		
+
+		
+		
+			<a href="/2020/07/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="blog-post-page-readmore-next" data-toggle="tooltip" data-placement="top" title="数据结构">下一篇</a>
+		
+
+        <div style="clear: both;"></div>
+    </article>
+
+    <article class="blog-post-block blog-post-page-content">
+        
+        <div class="post-more-function-br"></div>
+
+        <div class="modal fade" id="post-donate-content" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">打赏本文</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row post-donate-content">
+                            <div class="col-md-4">
+                                <p>支付宝</p>
+                                <img class="post-donate-content-img no-lightbox" src=""/>
+                            </div>
+                            <div class="col-md-4">
+                                <p>微信</p>
+                                <img class="post-donate-content-img no-lightbox" src=""/>
+                            </div>
+                            <div class="col-md-4">
+                                <p>财付通</p>
+                                <img class="post-donate-content-img no-lightbox" src=""/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="post-qrcode-content" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">文章二维码</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row post-qrcode-content">
+                            <span class="post-qrcode-content-canvas"></span>
+                            <img class="post-qrcode-content-img no-lightbox" src=""/>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            // post QRcode
+            // 中文转码
+            function toUtf8(str) {
+                var out, i, len, c;
+                out = "";
+                len = str.length;
+                for (i = 0; i < len; i++) {
+                    c = str.charCodeAt(i);
+                    if ((c >= 0x0001) && (c <= 0x007F)) {
+                        out += str.charAt(i);
+                    } else if (c > 0x07FF) {
+                        out += String.fromCharCode(0xE0 | ((c >> 12) & 0x0F));
+                        out += String.fromCharCode(0x80 | ((c >> 6) & 0x3F));
+                        out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F));
+                    } else {
+                        out += String.fromCharCode(0xC0 | ((c >> 6) & 0x1F));
+                        out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F));
+                    }
+                }
+                return out;
+            }
+            // 生成
+            var qrcode= $('.post-qrcode-content-canvas').qrcode({width: 150,height: 150,text: toUtf8("http://yoursite.com/2020/07/22/react/react%E9%A1%B9%E7%9B%AE%E5%88%9D%E5%A7%8B%E5%8C%96/")}).hide();
+            var canvas=qrcode.find('canvas').get(0);
+            $('.post-qrcode-content-img').attr('src',canvas.toDataURL('image/jpg'));
+        </script>
+
+        
+    </article>
+    
+</div>
+
+                
+            <footer class="blog-footer">
+                <p class="blog-footer-left">Copyright ©  2020 <a href="http://yoursite.com">龚箭</a></p>
+                <p class="blog-footer-right">Powered by <a href="https://hexo.io" target="_blank">Hexo</a>,Theme <a href="https://note.isweic.com/themes-life/" target="_blank">Life</a></p>
+            </footer>
+        </div><!--博客主栏结束-->
+        <!--博客侧边栏开始-->
+        <div class="col-xl-3 blog-sidebar">
+            <div class="blog-sidebar-title">
+                <a href="">龚箭</a>
+            </div>
+            <div class="blog-sidebar-logo">
+                <img src="https://avatar.csdnimg.cn/F/C/3/1_weixin_39513821.jpg">
+            </div>
+            <div class="blog-sidebar-count blog-sidebar-padding">
+                <div class="blog-sidebar-count-left">
+                    <p class="blog-sidebar-count-p">47</p>
+                    <span class="blog-sidebar-count-span">文章</span>
+                </div>
+                <div class="blog-sidebar-count-right">
+                    <p class="blog-sidebar-count-p">12</p>
+                    <span class="blog-sidebar-count-span">标签</span>
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+            <div class="blog-sidebar-icon blog-sidebar-padding">
+                <ul>
+                    <li><a href="https://github.com/15031617367" class="icon-github" target="_blank" data-toggle="tooltip" data-placement="top" title="Github"><i class="fa fa-github"></i></a></li>
+                    <li><a href="https://weibo.com/u/5637554673/home" class="icon-weibo" target="_blank" data-toggle="tooltip" data-placement="top" title="新浪微博"><i class="fa fa-weibo"></i></a></li>
+                    <!--<li><a href="" class="icon-facebook" target="_blank" data-toggle="tooltip" data-placement="top" title="FaceBook"><i class="fa fa-facebook"></i></a></li>-->
+                    <li><a href="mailto:2259763904@qq.com" class="icon-email" data-toggle="tooltip" data-placement="top" title="E-Mail"><i class="fa fa-envelope"></i></a></li>
+                </ul>
+            </div>
+            <div class="blog-sidebar-tags">
+                <h4 class="blog-sidebar-h4"><i class="fa fa-tag"></i>&nbsp;标签云</h4>
+                <ul class="blog-sidebar-tags-ul blog-sidebar-padding">
+                  
+                    
+                      <li><a href="/tags/CSS/" class="tag-could" data-toggle="tooltip" data-placement="top" title="CSS">CSS</a></li>
+                    
+                      <li><a href="/tags/git%E5%91%BD%E4%BB%A4%E9%9B%86/" class="tag-could" data-toggle="tooltip" data-placement="top" title="git命令集">git命令集</a></li>
+                    
+                      <li><a href="/tags/%E5%89%8D%E7%AB%AF%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/" class="tag-could" data-toggle="tooltip" data-placement="top" title="前端数据持久化">前端数据持久化</a></li>
+                    
+                      <li><a href="/tags/Vue/" class="tag-could" data-toggle="tooltip" data-placement="top" title="Vue">Vue</a></li>
+                    
+                      <li><a href="/tags/HTTP/" class="tag-could" data-toggle="tooltip" data-placement="top" title="HTTP">HTTP</a></li>
+                    
+                      <li><a href="/tags/Echarts/" class="tag-could" data-toggle="tooltip" data-placement="top" title="Echarts">Echarts</a></li>
+                    
+                      <li><a href="/tags/JavaScript/" class="tag-could" data-toggle="tooltip" data-placement="top" title="JavaScript">JavaScript</a></li>
+                    
+                      <li><a href="/tags/react/" class="tag-could" data-toggle="tooltip" data-placement="top" title="react">react</a></li>
+                    
+                      <li><a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="tag-could" data-toggle="tooltip" data-placement="top" title="数据结构与算法">数据结构与算法</a></li>
+                    
+                      <li><a href="/tags/%E9%A5%A5%E4%BA%BA%E8%B0%B7%E5%89%8D%E7%AB%AF/" class="tag-could" data-toggle="tooltip" data-placement="top" title="饥人谷前端">饥人谷前端</a></li>
+                    
+                      <li><a href="/tags/node/" class="tag-could" data-toggle="tooltip" data-placement="top" title="node">node</a></li>
+                    
+                      <li><a href="/tags/MVC/" class="tag-could" data-toggle="tooltip" data-placement="top" title="MVC">MVC</a></li>
+                    
+                  
+                </ul>
+            </div>
+            <script>
+              // 博客侧栏标签云随机色
+              var tag_cloud = $('.tag-could');
+              tag_cloud.each(function () {
+                  var Cnum = 9;
+                  var Crand = parseInt(Math.random() * Cnum);
+                  $(this).addClass("tag-could" + Crand);
+              })
+            </script>
+            <!--返回顶部按钮-->
+            <div class="retop">
+                <i class="fa fa-angle-up"></i>
+            </div>
+        </div><!--博客侧边栏结束-->
+    </div>
+</div>
+<script src="/js/LeanStatistics.min.js"></script>
+<script src="/js/Life.js"></script>
+<script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+    otherF();
+    LeanStatistics();
+    $(document).pjax('a', '#pjax-box', {fragment:'#pjax-box', timeout:8000}).on('pjax:complete', function() {
+      $('pre code').each(function(i, block){
+        hljs.highlightBlock(block);
+      })
+      $('code.hljs').each(function(i, block) {
+        hljs.lineNumbersBlock(block);
+      });
+      LeanStatistics();
+    }).on('pjax:start', function() { NProgress.start(); }).on('pjax:end',   function() {
+      NProgress.done();
+      otherF();
+    });
+</script>
+</body>
+</html>

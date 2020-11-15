@@ -1,0 +1,554 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no", user-scalable=no">
+  <title>Vue面试题总结龚箭</title>
+  <link rel="shortcut icon" href="">
+  
+    
+    
+      <link rel="stylesheet" href="/css/bootstrap.min.css">
+    
+      <link rel="stylesheet" href="/css/font-awesome.min.css">
+    
+      <link rel="stylesheet" href="/css/atom-one-dark.css">
+    
+      <link rel="stylesheet" href="/css/jquery.fancybox.css">
+    
+      <link rel="stylesheet" href="/css/nprogress.min.css">
+    
+      <link rel="stylesheet" href="/css/valine.css">
+    
+      <link rel="stylesheet" href="/css/life.css">
+    
+  
+
+  
+
+  <!-- jQuery first, then Tether, then Bootstrap JS. -->
+  
+  
+  
+    <script src="/js/jquery-2.2.4.min.js"></script>
+  
+    <script src="https://cdn1.lncld.net/static/js/3.1.0/av-min.js"></script>
+  
+    <script src="/js/jquery.pjax.js"></script>
+  
+    <script src="/js/nprogress.min.js"></script>
+  
+    <script src="/js/tether.min.js"></script>
+  
+    <script src="/js/bootstrap.min.js"></script>
+  
+    <script src="/js/highlight.min.js"></script>
+  
+    <script src="/js/highlightjs-line-numbers.min.js"></script>
+  
+    <script src="/js/jquery.fancybox.js"></script>
+  
+    <script src="/js/jquery.qrcode.min.js"></script>
+  
+    <script src="/js/Valine.min.js"></script>
+  
+  
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+<script>AV.init({appId:'',appKey:''});</script>
+<script type="text/javascript">
+      var config = {
+            ClasS: 'Counter',
+            el:'.views',
+            elP: '.views-post'
+      }
+</script>
+<div class="container">
+    <div class="row blog-box-shadow">
+        <!--博客主栏开始-->
+        <div class="col-xl-9 col-lg-12 blog-main" id="pjax-box">
+            <header class="blog-header">
+                <a href="http://yoursite.com" class="blog-header-mobile-title">龚箭</a>
+                <a href="javascript:;" class="blog-header-navbar-btn"><i class="fa fa-bars"></i></a>
+                <nav class="blog-header-navbar blog-header-fixed">
+                    <ul class="blog-navbar-links">
+                        
+                          <li class="blog-nav-item"><a href="/" class="transition">首页</a></li>
+                        
+                          <li class="blog-nav-item"><a href="/about/" class="transition">关于</a></li>
+                        
+                        <div class="blog-navbar-right">
+                            <form action="">
+                                <div class="input-group">
+                                    <input type="text" class="blog-header-search" placeholder="search...">
+                                    <buttn type="submit" class="blog-header-search-btn"><i class="fa fa-search"></i></buttn>
+                                </div>
+                            </form>
+                        </div>
+                    </ul>
+                </nav>
+            </header>
+                
+<header class="blog-post-page-title">
+    <h4>Vue面试题总结</h4>
+    <time datetime="2020-11-15T12:41:35.000Z"><i class="fa fa-clock-o"></i>2020-11-15</time>
+    
+    
+    <span>
+        <i class="fa fa-eye"></i>
+        <span id="/2020/11/15/Vue/Vue%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/" class="views views-post"  title="Vue面试题总结"></span>
+    </span>
+    
+    
+    
+	
+    
+</header>
+<div class="blog-main-post blog-post-page-box">
+    <article class="blog-post-block blog-post-page-content">
+        <section>
+            
+                <h1 id="Vue问题答疑"><a href="#Vue问题答疑" class="headerlink" title="Vue问题答疑"></a>Vue问题答疑</h1><ol>
+<li>v-if和v-for的区别</li>
+<li>v-if和v-for为什么不能一起使用?</li>
+<li>Vue组件之间的通讯</li>
+<li>Vue组件中的data属性为什么必须用函数形式</li>
+<li>谈谈Vue的生命周期,create和mouted的区别,第一次页面加载用到哪几个周期函数</li>
+<li>destroyed一般在什么场景使用?</li>
+<li>谈谈v-for中key的作用</li>
+<li>vue的slot理解和用法</li>
+<li>vue.js两个核心是什么?</li>
+<li>vue和JQ有哪些不同,他们有什么优点</li>
+<li>MVVM的理解</li>
+<li>说一下keep-alive的原理</li>
+<li>vuex的理解和使用场景</li>
+<li>vue中使用v-html会导致哪些问题</li>
+<li>简单说说vue的渲染过程</li>
+<li>异步请求适合在哪个生命周期调用</li>
+<li>为什么Vue采用异步渲染</li>
+</ol>
+<h2 id="1-v-if和v-for的区别"><a href="#1-v-if和v-for的区别" class="headerlink" title="1. v-if和v-for的区别?"></a>1. v-if和v-for的区别?</h2><ul>
+<li>v-if<ul>
+<li>用于判断条件是否满足,并渲染到DOM上</li>
+</ul>
+</li>
+<li>v-for <ul>
+<li>用于HTML的循环渲染 </li>
+</ul>
+</li>
+</ul>
+<h2 id="2-v-if和v-for为什么不能一起使用"><a href="#2-v-if和v-for为什么不能一起使用" class="headerlink" title="2. v-if和v-for为什么不能一起使用?"></a>2. v-if和v-for为什么不能一起使用?</h2><p>原因:<br>    v-for的优先级要高于v-if,如果在同一个元素上同时使用两个指令会导致被循环出来的每个元素都会带有一个v-if指令从而造成资源浪费<br>解决方法:<br>    在循环元素外层嵌套一个template标签或者div来做v-if的判断</p>
+<h2 id="3-Vue组件之间的通讯"><a href="#3-Vue组件之间的通讯" class="headerlink" title="3.Vue组件之间的通讯"></a>3.Vue组件之间的通讯</h2><h3 id="Vue可通过porps属性进行父子组件之间通讯-实例如下"><a href="#Vue可通过porps属性进行父子组件之间通讯-实例如下" class="headerlink" title="Vue可通过porps属性进行父子组件之间通讯,实例如下"></a>Vue可通过porps属性进行父子组件之间通讯,实例如下</h3><p>父组件,暂时起名为parent.vue</p>
+<pre><code class="javascript">    &lt;template&gt;
+        &lt;Child :number=&quot;num&quot;/&gt;
+    &lt;/template&gt;
+    &lt;script&gt;
+        import Child form &quot;./child.vue&quot;
+        export default{
+            conponents:{
+                Child
+            }
+            data(){
+                return{
+                    num:1000
+                }
+            }
+        }
+    &lt;/script&gt;
+</code></pre>
+<p>子组件,暂时命名为child.vue</p>
+<pre><code class="javascript">    &lt;template&gt;
+        &lt;div&gt;{{number}}&lt;/div&gt;
+    &lt;/template&gt;
+    &lt;script&gt;
+        export default{
+            porps:[number]
+        }
+    &lt;/script&gt;
+</code></pre>
+<h3 id="子父组件通信使用-emit"><a href="#子父组件通信使用-emit" class="headerlink" title="子父组件通信使用$emit"></a>子父组件通信使用$emit</h3><p>代码如下,父组件命名为parent.vue</p>
+<pre><code class="javascript">    &lt;template&gt;
+        &lt;div&gt;
+            &lt;Child @onNum=&quot;res&quot;/&gt;
+        &lt;/div&gt;
+    &lt;template&gt;
+    &lt;script&gt;
+        import Child from &quot;./child.vue&quot;
+        export default{
+            data(){
+                return{}
+            },
+            methods:{
+                res(data){
+                    console.log(&quot;data&quot;) //100
+                }
+            }
+        }
+    &lt;/script&gt;
+</code></pre>
+<p>子组件暂时命名为child.vue</p>
+<pre><code class="javascript">    &lt;template&gt;
+        &lt;div&gt;
+            &lt;button @click=&quot;test()&quot;&gt;给父亲传值&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/template&gt;
+    &lt;script&gt;
+        export defalut{
+            data(){
+                return{}
+            },
+            methods:{
+                test(){
+                    this.$emit(&quot;onNum&quot;,&quot;100&quot;)
+                }
+            }
+        }
+    &lt;/script&gt;
+</code></pre>
+<h3 id="兄弟组件传值使用EventBus事件总线通讯"><a href="#兄弟组件传值使用EventBus事件总线通讯" class="headerlink" title="兄弟组件传值使用EventBus事件总线通讯"></a>兄弟组件传值使用EventBus事件总线通讯</h3><p>代码如下,在app.vue中创建一个Vue实例</p>
+<pre><code class="javascript">    var bus = new Vue()
+    bus.$on() //绑定事件
+    bus.$emit() //发送事件
+</code></pre>
+<p>第一个组件命名为componetn1.vue,用于接收信息</p>
+<pre><code class="javascript">    &lt;template&gt;
+        &lt;div&gt;
+
+        &lt;/div&gt;
+    &lt;/template&gt;
+    &lt;script&gt;
+        export default{
+            data(){
+                return{}
+            },
+            mounted(){
+                //初始化时监听resFun事件
+                bus.$on(&quot;resFun&quot;,(data){
+                    console.log(data)
+                })
+            }
+        }
+    &lt;/script&gt;
+</code></pre>
+<p>第二个组件命名为componetn2.vue,用于发送信息</p>
+<pre><code class="javascript">    &lt;template&gt;
+        &lt;div&gt;
+            &lt;button @click=&quot;test&quot;&gt;提交&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/template&gt;
+    &lt;script&gt;
+        export default {
+            data(){
+                return{
+                    num:&quot;1000&quot;
+                }
+            },
+            methods:{
+                test(){
+                    bus.$emit(&quot;resFun&quot;,{
+                        num:this.num
+                    })
+                }
+            }
+        }
+    &lt;/script&gt;
+</code></pre>
+<p>最终解决方法:使用Vuex数据管理仓库</p>
+<h2 id="4-Vue组件中的data属性为什么必须用函数形式"><a href="#4-Vue组件中的data属性为什么必须用函数形式" class="headerlink" title="4. Vue组件中的data属性为什么必须用函数形式"></a>4. Vue组件中的data属性为什么必须用函数形式</h2><p>个人理解如果组件中data的属性对象的话,如果多次重复使用这个组件,其里面的data引用的是同一个对象的地址,如果一个地方改变了这个data的值,其他地方的data也将同时被改变.<br>如果是使用函数式在多次使用这个组件时js会创建独立的作用域,保证自己组件实例的属性不会被相互影响.</p>
+<h2 id="5-谈谈Vue的生命周期-create和mouted的区别-第一次页面加载用到哪几个周期函数"><a href="#5-谈谈Vue的生命周期-create和mouted的区别-第一次页面加载用到哪几个周期函数" class="headerlink" title="5. 谈谈Vue的生命周期,create和mouted的区别,第一次页面加载用到哪几个周期函数"></a>5. 谈谈Vue的生命周期,create和mouted的区别,第一次页面加载用到哪几个周期函数</h2><ul>
+<li>create :他会在Vue在渲染HTML模板前触发</li>
+<li>mouted :会在html渲染后触发</li>
+<li>第一次页面加载会触发beforeCreate, created, beforeMount, mounted四个生命周期函数</li>
+</ul>
+<h2 id="6-destroyed一般在什么场景使用"><a href="#6-destroyed一般在什么场景使用" class="headerlink" title="6. destroyed一般在什么场景使用?"></a>6. destroyed一般在什么场景使用?</h2><p>个人理解destriyed组件销毁监听,一般用在v-if中或者页面跳转前进行的一些操作.</p>
+<h2 id="7-谈谈v-for中key的作用"><a href="#7-谈谈v-for中key的作用" class="headerlink" title="7. 谈谈v-for中key的作用?"></a>7. 谈谈v-for中key的作用?</h2><p>个人理解 v-for指令中key的只要是为了提升v-for的渲染速度防止数据混乱,之所以key的值需要唯一性,是因为vue根据key值判断该条渲染项是否是原有的元素和数据,如果是将不会重新创建新元素,如果不是就创建此条数据的新元素并渲染到页面上</p>
+<h2 id="8-vue的slot理解和用法"><a href="#8-vue的slot理解和用法" class="headerlink" title="8. vue的slot理解和用法"></a>8. vue的slot理解和用法</h2><ul>
+<li>slot(槽口)个人理解slot提供插槽概念,以笔记本电脑举例,笔记本本身(子组件中)会提供多个USB接口(slot),来连接外置设备如U盘,鼠标等硬件;同理在Vue中如果父组件给子组件指定的HTML位置上,传一些东西就需要把子组件的某些位置设置为slot.<br>代码示例如下,父组件命名为parent.vue<pre><code class="javascript">  &lt;template&gt;
+      &lt;div&gt;
+          &lt;Child&gt;
+              &lt;h1&gt;hello world&lt;/h1&gt;
+          &lt;/Child&gt;
+      &lt;/div&gt;
+  &lt;/tempalte&gt;
+  &lt;script&gt;
+      import Child from &quot;./child.vue&quot;
+      export default {
+          components:{
+              Child
+          }
+      }
+  &lt;/script&gt;
+</code></pre>
+子组件命名为child.vue<pre><code class="javascript">  &lt;template&gt;
+      &lt;div&gt;
+          &lt;div&gt;这是我自己的内容&lt;/div&gt;
+          &lt;slot name=&quot;text&quot;&gt;&lt;/slot&gt;
+      &lt;/div&gt;
+  &lt;/template&gt;
+  &lt;script&gt;
+      export default{
+          data(){
+              return {}
+          }    
+      }
+  &lt;/script&gt;
+</code></pre>
+</li>
+</ul>
+<h2 id="9-vue-js两个核心是什么"><a href="#9-vue-js两个核心是什么" class="headerlink" title="9. vue.js两个核心是什么?"></a>9. vue.js两个核心是什么?</h2><ol>
+<li>数据驱动(双向数据绑定又称为数据响应式)</li>
+<li>组件系统(template)Vue独创<br> vue中每一个.vue文件就是一个组件,可以重复引用</li>
+</ol>
+<h2 id="11-MVVM的理解"><a href="#11-MVVM的理解" class="headerlink" title="11. MVVM的理解"></a>11. MVVM的理解</h2><ul>
+<li>M: Model数据模型 - 用于处理数据</li>
+<li>V: View视图 负责页面相关</li>
+<li>VM: ViewModel 与界面对应Model 用于把Model对象封装成可以显示和接受输入的界面数据对象</li>
+</ul>
+<h2 id="12-说一下keep-alive的原理"><a href="#12-说一下keep-alive的原理" class="headerlink" title="12. 说一下keep-alive的原理"></a>12. 说一下keep-alive的原理</h2><h3 id="keep-alive是什么"><a href="#keep-alive是什么" class="headerlink" title="keep-alive是什么"></a>keep-alive是什么</h3><p>知识盲区有待查证</p>
+<h2 id="13-vuex的理解和使用场景"><a href="#13-vuex的理解和使用场景" class="headerlink" title="13. vuex的理解和使用场景"></a>13. vuex的理解和使用场景</h2><p>Vuex是Vue提供的数据管理仓库,每个Vue组件过可以访问并改变其指定属性的变化,并把当前状态更新到每个组件上.<br>使用场景,当多个组件需要监听获取和修改同一个参数时,比如电商平台的登录页,各个组件功能需要监听用户登录的状态开对其开放各个功能,就可以吧用户登录状态储存到vuex中,一旦发现用户退出页面马上跳转到登录页.</p>
+<h2 id="14-vue中使用v-html会导致哪些问题"><a href="#14-vue中使用v-html会导致哪些问题" class="headerlink" title="14.vue中使用v-html会导致哪些问题"></a>14.vue中使用v-html会导致哪些问题</h2><ol>
+<li>可能会导致css攻击</li>
+<li>v-html渲染时不会编辑到vue模板中，因此无法使用html的插值表达式来一些其他的操作</li>
+<li>scoprd中的class不会作用在v-html中</li>
+<li>v-html只会渲染后台返回的html\css和图片 </li>
+</ol>
+<h2 id="15-简单说说vue的渲染过程"><a href="#15-简单说说vue的渲染过程" class="headerlink" title="15. 简单说说vue的渲染过程"></a>15. 简单说说vue的渲染过程</h2><p>知识盲区有待查阅</p>
+<h2 id="16-异步请求适合在哪个生命周期调用"><a href="#16-异步请求适合在哪个生命周期调用" class="headerlink" title="16. 异步请求适合在哪个生命周期调用"></a>16. 异步请求适合在哪个生命周期调用</h2><p>如果在不操作dom的情况下推荐在created函数中进行异步请求,优势是因为请求时间比较早,页面loading时间相对较短;<br>如果需要操作DOM的需要在页面渲染完成mounted阶段发起异步请求;</p>
+<h2 id="17-为什么Vue采用异步渲染"><a href="#17-为什么Vue采用异步渲染" class="headerlink" title="17.为什么Vue采用异步渲染"></a>17.为什么Vue采用异步渲染</h2><p>个人理解为了提高页面性能,如果不采用异步更新.每次更新数据都会对当前组件进行渲染.</p>
+
+            
+        </section>
+        <footer class="blog-post-page-tags">
+        
+			
+				
+			<a href="/tags/Vue/" rel="tag" data-toggle="tooltip" data-placement="top" title="Linux">Vue</a>
+				
+			
+		
+        </footer>
+    </article>
+    <article class="blog-post-page-readmore">
+    	
+    	
+		
+
+		
+		
+			<a href="/2020/11/15/Vue/Vue%E8%BF%9B%E9%98%B6%E6%9E%84%E9%80%A0%E5%B1%9E%E6%80%A7/" class="blog-post-page-readmore-next" data-toggle="tooltip" data-placement="top" title="Vue进阶构造属性">下一篇</a>
+		
+
+        <div style="clear: both;"></div>
+    </article>
+
+    <article class="blog-post-block blog-post-page-content">
+        
+        <div class="post-more-function-br"></div>
+
+        <div class="modal fade" id="post-donate-content" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">打赏本文</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row post-donate-content">
+                            <div class="col-md-4">
+                                <p>支付宝</p>
+                                <img class="post-donate-content-img no-lightbox" src=""/>
+                            </div>
+                            <div class="col-md-4">
+                                <p>微信</p>
+                                <img class="post-donate-content-img no-lightbox" src=""/>
+                            </div>
+                            <div class="col-md-4">
+                                <p>财付通</p>
+                                <img class="post-donate-content-img no-lightbox" src=""/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="post-qrcode-content" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">文章二维码</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row post-qrcode-content">
+                            <span class="post-qrcode-content-canvas"></span>
+                            <img class="post-qrcode-content-img no-lightbox" src=""/>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            // post QRcode
+            // 中文转码
+            function toUtf8(str) {
+                var out, i, len, c;
+                out = "";
+                len = str.length;
+                for (i = 0; i < len; i++) {
+                    c = str.charCodeAt(i);
+                    if ((c >= 0x0001) && (c <= 0x007F)) {
+                        out += str.charAt(i);
+                    } else if (c > 0x07FF) {
+                        out += String.fromCharCode(0xE0 | ((c >> 12) & 0x0F));
+                        out += String.fromCharCode(0x80 | ((c >> 6) & 0x3F));
+                        out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F));
+                    } else {
+                        out += String.fromCharCode(0xC0 | ((c >> 6) & 0x1F));
+                        out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F));
+                    }
+                }
+                return out;
+            }
+            // 生成
+            var qrcode= $('.post-qrcode-content-canvas').qrcode({width: 150,height: 150,text: toUtf8("http://yoursite.com/2020/11/15/Vue/Vue%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/")}).hide();
+            var canvas=qrcode.find('canvas').get(0);
+            $('.post-qrcode-content-img').attr('src',canvas.toDataURL('image/jpg'));
+        </script>
+
+        
+    </article>
+    
+</div>
+
+                
+            <footer class="blog-footer">
+                <p class="blog-footer-left">Copyright ©  2020 <a href="http://yoursite.com">龚箭</a></p>
+                <p class="blog-footer-right">Powered by <a href="https://hexo.io" target="_blank">Hexo</a>,Theme <a href="https://note.isweic.com/themes-life/" target="_blank">Life</a></p>
+            </footer>
+        </div><!--博客主栏结束-->
+        <!--博客侧边栏开始-->
+        <div class="col-xl-3 blog-sidebar">
+            <div class="blog-sidebar-title">
+                <a href="">龚箭</a>
+            </div>
+            <div class="blog-sidebar-logo">
+                <img src="https://avatar.csdnimg.cn/F/C/3/1_weixin_39513821.jpg">
+            </div>
+            <div class="blog-sidebar-count blog-sidebar-padding">
+                <div class="blog-sidebar-count-left">
+                    <p class="blog-sidebar-count-p">47</p>
+                    <span class="blog-sidebar-count-span">文章</span>
+                </div>
+                <div class="blog-sidebar-count-right">
+                    <p class="blog-sidebar-count-p">12</p>
+                    <span class="blog-sidebar-count-span">标签</span>
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+            <div class="blog-sidebar-icon blog-sidebar-padding">
+                <ul>
+                    <li><a href="https://github.com/15031617367" class="icon-github" target="_blank" data-toggle="tooltip" data-placement="top" title="Github"><i class="fa fa-github"></i></a></li>
+                    <li><a href="https://weibo.com/u/5637554673/home" class="icon-weibo" target="_blank" data-toggle="tooltip" data-placement="top" title="新浪微博"><i class="fa fa-weibo"></i></a></li>
+                    <!--<li><a href="" class="icon-facebook" target="_blank" data-toggle="tooltip" data-placement="top" title="FaceBook"><i class="fa fa-facebook"></i></a></li>-->
+                    <li><a href="mailto:2259763904@qq.com" class="icon-email" data-toggle="tooltip" data-placement="top" title="E-Mail"><i class="fa fa-envelope"></i></a></li>
+                </ul>
+            </div>
+            <div class="blog-sidebar-tags">
+                <h4 class="blog-sidebar-h4"><i class="fa fa-tag"></i>&nbsp;标签云</h4>
+                <ul class="blog-sidebar-tags-ul blog-sidebar-padding">
+                  
+                    
+                      <li><a href="/tags/CSS/" class="tag-could" data-toggle="tooltip" data-placement="top" title="CSS">CSS</a></li>
+                    
+                      <li><a href="/tags/git%E5%91%BD%E4%BB%A4%E9%9B%86/" class="tag-could" data-toggle="tooltip" data-placement="top" title="git命令集">git命令集</a></li>
+                    
+                      <li><a href="/tags/%E5%89%8D%E7%AB%AF%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/" class="tag-could" data-toggle="tooltip" data-placement="top" title="前端数据持久化">前端数据持久化</a></li>
+                    
+                      <li><a href="/tags/Vue/" class="tag-could" data-toggle="tooltip" data-placement="top" title="Vue">Vue</a></li>
+                    
+                      <li><a href="/tags/HTTP/" class="tag-could" data-toggle="tooltip" data-placement="top" title="HTTP">HTTP</a></li>
+                    
+                      <li><a href="/tags/Echarts/" class="tag-could" data-toggle="tooltip" data-placement="top" title="Echarts">Echarts</a></li>
+                    
+                      <li><a href="/tags/JavaScript/" class="tag-could" data-toggle="tooltip" data-placement="top" title="JavaScript">JavaScript</a></li>
+                    
+                      <li><a href="/tags/react/" class="tag-could" data-toggle="tooltip" data-placement="top" title="react">react</a></li>
+                    
+                      <li><a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="tag-could" data-toggle="tooltip" data-placement="top" title="数据结构与算法">数据结构与算法</a></li>
+                    
+                      <li><a href="/tags/%E9%A5%A5%E4%BA%BA%E8%B0%B7%E5%89%8D%E7%AB%AF/" class="tag-could" data-toggle="tooltip" data-placement="top" title="饥人谷前端">饥人谷前端</a></li>
+                    
+                      <li><a href="/tags/node/" class="tag-could" data-toggle="tooltip" data-placement="top" title="node">node</a></li>
+                    
+                      <li><a href="/tags/MVC/" class="tag-could" data-toggle="tooltip" data-placement="top" title="MVC">MVC</a></li>
+                    
+                  
+                </ul>
+            </div>
+            <script>
+              // 博客侧栏标签云随机色
+              var tag_cloud = $('.tag-could');
+              tag_cloud.each(function () {
+                  var Cnum = 9;
+                  var Crand = parseInt(Math.random() * Cnum);
+                  $(this).addClass("tag-could" + Crand);
+              })
+            </script>
+            <!--返回顶部按钮-->
+            <div class="retop">
+                <i class="fa fa-angle-up"></i>
+            </div>
+        </div><!--博客侧边栏结束-->
+    </div>
+</div>
+<script src="/js/LeanStatistics.min.js"></script>
+<script src="/js/Life.js"></script>
+<script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+    otherF();
+    LeanStatistics();
+    $(document).pjax('a', '#pjax-box', {fragment:'#pjax-box', timeout:8000}).on('pjax:complete', function() {
+      $('pre code').each(function(i, block){
+        hljs.highlightBlock(block);
+      })
+      $('code.hljs').each(function(i, block) {
+        hljs.lineNumbersBlock(block);
+      });
+      LeanStatistics();
+    }).on('pjax:start', function() { NProgress.start(); }).on('pjax:end',   function() {
+      NProgress.done();
+      otherF();
+    });
+</script>
+</body>
+</html>
